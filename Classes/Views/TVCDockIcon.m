@@ -48,21 +48,7 @@ static NSInteger _cachedHighlightCount = -1;
 
 + (NSImage *)applicationIcon
 {
-    /* THIS IS A SECRET!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-     
-     Birthday icon designed by Alex Sørlie Glomsaas. */
-
-	NSCalendar *sysCalendar = [NSCalendar currentCalendar];
-
-    NSDateComponents *breakdownInfo = [sysCalendar components:(NSDayCalendarUnit | NSMonthCalendarUnit) fromDate:[NSDate date]];
-
-    /* The first public commit of Textual occured on July, 23, 2010. This is the day
-     that we consider the birthday of the application. */
-    if ([breakdownInfo month] == 7 && [breakdownInfo day] == 23) {
-        return [NSImage imageNamed:@"birthdayIcon"];
-    } else {
-        return [NSImage imageNamed:@"NSApplicationIcon"];
-    }
+    return [NSImage imageNamed:@"NSApplicationIcon"];
 }
 
 + (void)resetCachedCount
